@@ -9,6 +9,7 @@ import { AuthService } from './auth/auth.service';
 import { QuestionPageComponent } from './qn/question-page/question-page.component';
 import { QuestionListComponent } from './qn/question-list/question-list.component';
 import { AskQuestionComponent } from './qn/ask-question/ask-question.component';
+import { EditorComponent } from './qn/ask-question/editor/editor.component';
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     SignupComponent,
     QuestionPageComponent,
     QuestionListComponent,
-    AskQuestionComponent
+    AskQuestionComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
