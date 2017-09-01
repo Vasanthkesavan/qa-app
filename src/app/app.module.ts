@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent} from './auth/signup/signup.component';
 import { SigninComponent} from './auth/signin/signin.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
