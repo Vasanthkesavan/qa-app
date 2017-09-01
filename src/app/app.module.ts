@@ -10,12 +10,15 @@ import { QuestionPageComponent } from './qn/question-page/question-page.componen
 import { QuestionListComponent } from './qn/question-list/question-list.component';
 import { AskQuestionComponent } from './qn/ask-question/ask-question.component';
 import { EditorComponent } from './qn/ask-question/editor/editor.component';
+import { ServerService } from './server.service';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
   { path: '', component: SignupComponent },
   { path: 'sign-up', component: SignupComponent },
-  { path: 'question-page', component: QuestionPageComponent }
+  { path: 'question-page', component: QuestionPageComponent },
+  { path: 'ask-question', component: AskQuestionComponent }
 ];
 
 @NgModule({
@@ -31,9 +34,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
