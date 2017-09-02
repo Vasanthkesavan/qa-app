@@ -12,6 +12,8 @@ import { AskQuestionComponent } from './qn/ask-question/ask-question.component';
 import { EditorComponent } from './qn/ask-question/editor/editor.component';
 import { ServerService } from './server.service';
 import { HttpModule } from '@angular/http';
+import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
+
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
@@ -29,7 +31,9 @@ const appRoutes: Routes = [
     QuestionPageComponent,
     QuestionListComponent,
     AskQuestionComponent,
-    EditorComponent
+    EditorComponent,
+    HeadercomponentComponent,
+
   ],
   imports: [
     BrowserModule,

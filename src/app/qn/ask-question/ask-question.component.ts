@@ -12,7 +12,10 @@ import { FormsModule } from '@angular/forms';
 export class AskQuestionComponent implements OnInit {
   @Input() tinymce: string;
 
-  questionData = new QuestionStructure();
+  textValue = '';
+  questionName = '';
+
+  questionData = new QuestionStructure(this.questionName, this.textValue);
 
   constructor(private serverService: ServerService) { }
 
@@ -24,8 +27,7 @@ export class AskQuestionComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Data before submitting', this.questionData);
-    this.serverService.storeQuestions(this.questionData)
+    this.serverService.storeQuestions([this.questionData])
     .subscribe(
       (response) => console.log(response),
       (error) => console.log(error)

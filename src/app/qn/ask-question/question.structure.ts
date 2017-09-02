@@ -1,4 +1,9 @@
 export class QuestionStructure {
-    questionName: string;
-    textValue: string;
+    public questionName: string;
+    public textValue: string;
+
+    constructor(questionName, textValue) {
+        this.questionName = questionName;
+        this.textValue = textValue;
+    }
 }
