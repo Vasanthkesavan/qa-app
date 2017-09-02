@@ -4,6 +4,7 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a routerLink="">Home</a></li>
                 <li><a routerLink="question-page"  *ngIf="authService.isAuthenticated()">Question</a></li>
+                <li><a style="cursor: pointer" (click)="logout()" *ngIf="authService.isAuthenticated()">LogOut</a></li>
             </ul>
         </div>
     </div>
