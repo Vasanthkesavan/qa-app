@@ -13,14 +13,14 @@ import { EditorComponent } from './qn/ask-question/editor/editor.component';
 import { ServerService } from './server.service';
 import { HttpModule } from '@angular/http';
 import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
-
+import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
   { path: '', component: SignupComponent },
   { path: 'sign-up', component: SignupComponent },
-  { path: 'question-page', component: QuestionPageComponent },
-  { path: 'ask-question', component: AskQuestionComponent }
+  { path: 'question-page', component: QuestionPageComponent, canActivate: [AuthGuard] },
+  { path: 'ask-question', component: AskQuestionComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule
   ],
-  providers: [AuthService, ServerService],
+  providers: [AuthService, ServerService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
