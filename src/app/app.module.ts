@@ -14,13 +14,16 @@ import { ServerService } from './server.service';
 import { HttpModule } from '@angular/http';
 import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { AnswerQuestionComponent } from './ans/answer-question/answer-question.component';
+import { QuestionDetailComponent } from './qn/question-list/question-detail/question-detail.component';
 
 const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
   { path: '', component: SignupComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'question-page', component: QuestionPageComponent, canActivate: [AuthGuard] },
-  { path: 'ask-question', component: AskQuestionComponent, canActivate: [AuthGuard] }
+  { path: 'ask-question', component: AskQuestionComponent, canActivate: [AuthGuard] },
+  { path: 'answer-question', component: AnswerQuestionComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -33,6 +36,8 @@ const appRoutes: Routes = [
     AskQuestionComponent,
     EditorComponent,
     HeadercomponentComponent,
+    AnswerQuestionComponent,
+    QuestionDetailComponent,
 
   ],
   imports: [

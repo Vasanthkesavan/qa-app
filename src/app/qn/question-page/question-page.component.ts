@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-page.component.css']
 })
 export class QuestionPageComponent implements OnInit {
+  selectedQuestion: Array<string>;
 
   constructor() { }
 

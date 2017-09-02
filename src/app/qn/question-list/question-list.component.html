@@ -1,20 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-10 col-sm-10">
-                <div class="list-group">                    
-                    <li class="list-group-item" *ngFor="let question of questions">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <h3 class="mb-1" >{{ question[0].questionName }}</h3>
-                        <p class="mb-1"  [innerHTML]="question[0].textValue"></p>
-                        <a href="#">Answer this Question</a>
-                        </a>                      
-                    </li>                                      
-                </div>
+            <app-question-detail
+              *ngFor="let qn of questions"
+              [question]="qn"
+              (questionSelected)="onQuestionSelected(qn)"    
+            >
+            </app-question-detail>
         </div>
     </div>
 </div>
-
-
+<router-outlet></router-outlet>
 
 
 
