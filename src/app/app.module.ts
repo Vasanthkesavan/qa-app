@@ -15,6 +15,7 @@ import { QuestionAloneComponent } from './questions/question-list/question-alone
 import { AnswersListComponent } from './answers-list/answers-list.component';
 import { AnswerEditComponent } from './answers-list/answer-edit/answer-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { AnswersListService } from './answers-list/answers-list.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [AnswersListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

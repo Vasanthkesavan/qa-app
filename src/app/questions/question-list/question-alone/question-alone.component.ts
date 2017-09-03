@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Question } from '../../question.model';
+import { QuestionService } from '../../question.service';
 
 @Component({
   selector: 'app-question-alone',
@@ -8,14 +9,14 @@ import { Question } from '../../question.model';
 })
 export class QuestionAloneComponent implements OnInit {
   @Input() question: Question;
-  @Output() questionSelected = new EventEmitter<void>();
 
-  constructor() { }
+
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
   }
 
   onSelected() {
-    this.questionSelected.emit();
+    this.questionService.questionSelected.emit(this.question);
   }
 }

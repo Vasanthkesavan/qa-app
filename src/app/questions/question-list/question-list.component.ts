@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Question } from '../question.model';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-question-list',
@@ -7,19 +8,11 @@ import { Question } from '../question.model';
   styleUrls: ['./question-list.component.css']
 })
 export class QuestionListComponent implements OnInit {
-  @Output() questionWasSelected = new EventEmitter<Question>();
+  questions: Question[];
 
-  questions: Question[] = [
-    new Question('What is this app?', 'This is to ask question and answer question'),
-    new Question('What is this app again?', 'Again, this is to ask question and answer question')
-  ];
-
-  constructor() { }
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
-  }
-
-  onQuestionSelected(question: Question) {
-    this.questionWasSelected.emit(question);
+    this.questions = this.questionService.getQuestions();
   }
 }

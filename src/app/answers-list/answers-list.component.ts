@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Answer } from '../shared/answer.model';
+import { AnswersListService } from './answers-list.service';
 
 @Component({
   selector: 'app-answers-list',
@@ -7,14 +8,17 @@ import { Answer } from '../shared/answer.model';
   styleUrls: ['./answers-list.component.css']
 })
 export class AnswersListComponent implements OnInit {
-  answers: Answer[] = [
-    new Answer('Basically an angular application which I\'m building as a MVP'),
-    new Answer('Again, Basically an angular application which I\'m building as a MVP')
-  ];
+  answers: Answer[];
 
-  constructor() { }
+  constructor(private answerService: AnswersListService) { }
 
   ngOnInit() {
+    this.answers = this.answerService.getAnswers();
+    this.answerService.answersChanged
+    .subscribe(
+      (answers: Answer[]) => {
+        this.answers = answers;
+      }
+    );
   }
-
 }
