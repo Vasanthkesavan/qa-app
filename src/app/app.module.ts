@@ -14,7 +14,7 @@ import { QuestionDetailComponent } from './questions/question-detail/question-de
 import { QuestionAloneComponent } from './questions/question-list/question-alone/question-alone.component';
 import { AnswersListComponent } from './answers-list/answers-list.component';
 import { AnswerEditComponent } from './answers-list/answer-edit/answer-edit.component';
-
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { AnswerEditComponent } from './answers-list/answer-edit/answer-edit.comp
     QuestionDetailComponent,
     QuestionAloneComponent,
     AnswersListComponent,
-    AnswerEditComponent
+    AnswerEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
