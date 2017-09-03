@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-answer-edit></app-answer-edit>
+    <hr>
+    <ul class="list-group">
+      <a 
+      class="list-group-item" 
+      style="cursor: pointer"
+      *ngFor="let answer of answers"
+      >
+      {{ answer.questionAnswer }} 
+    </a>
+    </ul>
+  </div>
+</div>

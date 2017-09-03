@@ -12,6 +12,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
 import { QuestionAloneComponent } from './questions/question-list/question-alone/question-alone.component';
+import { AnswersListComponent } from './answers-list/answers-list.component';
+import { AnswerEditComponent } from './answers-list/answer-edit/answer-edit.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { QuestionAloneComponent } from './questions/question-list/question-alone
     QuestionsComponent,
     QuestionListComponent,
     QuestionDetailComponent,
-    QuestionAloneComponent
+    QuestionAloneComponent,
+    AnswersListComponent,
+    AnswerEditComponent
   ],
   imports: [
     BrowserModule,
