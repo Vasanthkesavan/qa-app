@@ -13,9 +13,10 @@ import { QuestionListComponent } from './questions/question-list/question-list.c
 import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
 import { QuestionAloneComponent } from './questions/question-list/question-alone/question-alone.component';
 import { AnswersListComponent } from './answers-list/answers-list.component';
-import { AnswerEditComponent } from './answers-list/answer-edit/answer-edit.component';
+
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AnswersListService } from './answers-list/answers-list.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,13 @@ import { AnswersListService } from './answers-list/answers-list.service';
     QuestionDetailComponent,
     QuestionAloneComponent,
     AnswersListComponent,
-    AnswerEditComponent,
     DropdownDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [AnswersListService],
   bootstrap: [AppComponent]

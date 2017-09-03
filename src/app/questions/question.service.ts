@@ -1,7 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Question } from './question.model';
 import { Answer } from '../shared/answer.model';
+import { AnswersListService } from '../answers-list/answers-list.service';
 
+@Injectable()
 export class QuestionService {
     questionSelected = new EventEmitter<Question>();
 
@@ -14,7 +16,13 @@ export class QuestionService {
         ])
       ];
 
+    constructor(private answerService: AnswersListService) {}
+
     getQuestions() {
         return this.questions.slice();
+    }
+
+    addAnswersToAnswersList(answers: Answer[]) {
+        this.answerService.addAnswers(answers);
     }
 }

@@ -3,8 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-questions *ngIf="loadedFeature === 'question'"></app-questions>
-            <app-answers-list *ngIf="loadedFeature !== 'question'"></app-answers-list>
+           <router-outlet></router-outlet>
         </div>
     </div>
 </div>

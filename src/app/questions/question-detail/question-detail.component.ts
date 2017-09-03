@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../question.model';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-question-detail',
@@ -9,9 +10,12 @@ import { Question } from '../question.model';
 export class QuestionDetailComponent implements OnInit {
   @Input() question: Question;
 
-  constructor() { }
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
   }
 
+  onAddToAnswers() {
+    this.questionService.addAnswersToAnswersList(this.question.answers);
+  }
 }

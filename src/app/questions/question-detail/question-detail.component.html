@@ -9,9 +9,9 @@
     <div class="btn-group" appDropdown>
       <button type="button" class="btn btn-primary dropdown-toggle">Manage Question <span class="caret"></span> </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Add Answer</a></li>
-        <li><a href="#">Edit Question</a></li>
-        <li><a href="#">Delete Question</a></li>
+        <li><a (click)="onAddToAnswers()" style="cursor: pointer;">Add Answer</a></li>
+        <li><a style="cursor: pointer;">Edit Question</a></li>
+        <li><a style="cursor: pointer;">Delete Question</a></li>
       </ul>
     </div>
   </div>

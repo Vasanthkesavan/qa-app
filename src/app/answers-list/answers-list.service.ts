@@ -17,4 +17,10 @@ export class AnswersListService {
         this.answers.push(answer);
         this.answersChanged.emit(this.answers.slice());
     }
+
+    addAnswers(answers: Answer[]) {
+        // tslint:disable-next-line:prefer-const
+        this.answers.push(...answers);
+        this.answersChanged.emit(this.answers.slice());
+    }
 }
